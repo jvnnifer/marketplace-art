@@ -2,7 +2,7 @@ import React from "react";
 import photo1 from "/girl-photo1.jpg";
 import photo2 from "/family.jpg";
 
-const Tips = () => {
+const Painting = () => {
   return (
     <div class="flex flex-col lg:flex-row m-5">
       <div className="flex flex-col mt-10 mr-0 lg:mr-8">
@@ -56,4 +56,4 @@ const Tips = () => {
   );
 };
 
-export default Tips;
+export default Painting;

@@ -1,7 +1,7 @@
 import React from "react";
 import book1 from "/adhdbook1.jpg";
 
-const Logo = () => {
+const LogoPage = () => {
   return (
     <div>
       <h1 className="mx-5 font-bold font-primary text-dark-blue text-2xl">Beberapa saran untuk kamu:</h1>
@@ -30,4 +30,4 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+export default LogoPage;
