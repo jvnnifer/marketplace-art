@@ -1,10 +1,10 @@
 import React from "react";
 import book1 from "/adhdbook1.jpg";
 
-const Literatur = () => {
+const Logo = () => {
   return (
     <div>
-      <h1 className="mx-5 font-bold font-primary text-dark-blue text-2xl">Beberapa buku yang bisa membantu kamu:</h1>
+      <h1 className="mx-5 font-bold font-primary text-dark-blue text-2xl">Beberapa saran untuk kamu:</h1>
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="w-[350px] h-[450px] bg-transparent cursor-pointer group  rounded-3xl perspective-1000 m-5">
           <div className="relative w-full h-full preserve-3d group-hover:rotate-y-180 duration-500">
@@ -30,4 +30,4 @@ const Literatur = () => {
   );
 };
 
-export default Literatur;
+export default Logo;

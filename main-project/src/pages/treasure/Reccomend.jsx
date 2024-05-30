@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Literature from "./Literatur";
+import Logo from "./Logo";
 import Tips from "./Tips";
 import PsyRec from "./PsyRec";
 
 const Reccomend = () => {
-  const [activeTab, setActiveTab] = useState("Literature");
+  const [activeTab, setActiveTab] = useState("Logo");
 
   const handleTab = (tabName) => {
     setActiveTab(tabName);
@@ -17,11 +17,8 @@ const Reccomend = () => {
             <h1 className="text-center text-4xl font-primary font-bold text-dark-blue py-5">Jelajahi layanan</h1>
             <h2 className="font-semibold text-center">Dapatkan rekomendasi dan tips seputar pendidikan untuk anak ADHD disini!</h2>
             <div className="flex flex-row gap-4 m-5 justify-evenly items-center text-xl">
-              <a
-                className={"flex items-center flex-shrink-0 px-5 py-2 border-b-4 cursor-pointer " + (activeTab === "Literature" ? "border-lapis-lazuli font-semibold" : "border-blue-300 text-dark-blue")}
-                onClick={() => handleTab("Literature")}
-              >
-                Literatur
+              <a className={"flex items-center flex-shrink-0 px-5 py-2 border-b-4 cursor-pointer " + (activeTab === "Logo" ? "border-lapis-lazuli font-semibold" : "border-blue-300 text-dark-blue")} onClick={() => handleTab("Logo")}>
+                Logo
               </a>
               <a className={"flex items-center flex-shrink-0 px-5 py-2 border-b-4 cursor-pointer " + (activeTab === "Tips" ? "border-lapis-lazuli font-semibold" : "border-blue-300 text-dark-blue")} onClick={() => handleTab("Tips")}>
                 Tips
