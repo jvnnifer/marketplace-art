@@ -50,6 +50,7 @@ module.exports = {
         yellowlight: "#FCFF6D",
         mint: "#76EFFF",
         blueberry: "#2A56C8",
+        cream: "#FFF0BA",
       },
       fontFamily: {
         primary: ["Inter", "sans-serif"],
