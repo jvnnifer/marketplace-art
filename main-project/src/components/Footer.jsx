@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/afocado.svg";
+import logo from "/BLUEECHOARTS.svg";
 import twitter from "/twitterlogo.svg";
 import ig from "/logoig.svg";
 import youtube from "/youtubelogo.svg";
@@ -10,8 +10,8 @@ const Footer = () => {
       <div className="section-container grid grid-cols-1 lg:grid-cols-4 gap-5 text-white">
         <div>
           <img src={logo} alt="" className="w-24" />
-          <p className="font-bold">AFOCADO</p>
-          <p className="font-medium">Providing reliable education to ADHD since 2014</p>
+          <p className="font-bold">BlueEchoArts</p>
+          <p className="font-medium">Providing reliable art services since 2090</p>
         </div>
         <nav className="flex flex-col">
           <h6 className="footer-title">Services</h6>

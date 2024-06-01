@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "/afocado.svg";
+import logo from "/BLUEECHOARTS.svg";
 
 const Navbar = () => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const Navbar = () => {
       <li className="lg:bg-transparent text-white text-lg mr-0 lg:mr-5">
         <a href="/">Home</a>
       </li>
-      <li className="lg:bg-transparent text-white text-lg lg:mr-5 border-1 border-transparent lg:border-2 lg:border-white rounded-lg hover:bg-white hover:text-burnt-cheese hover:duration-300">
+      <li className="lg:bg-transparent text-yellowlight text-lg lg:mr-5 border-1 border-transparent lg:border-2 lg:border-yellowlight rounded-lg hover:bg-yellowlight hover:text-burnt-cheese hover:duration-300">
         <a href="/treasure">Illustration</a>
       </li>
       <li className="text-white text-lg lg:mr-5 lg:bg-burnt-cheese text-white hover:bg-happy-yellow rounded-lg hover:duration-300">
