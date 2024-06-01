@@ -1,13 +1,13 @@
 import React from "react";
-import image from "/kid-signin.svg";
+import image from "/sign-up-bg.svg";
 
 const SignIn = () => {
   return (
-    <div className="flex flex-col lg:flex-row bg-mountain-bluish">
+    <div className="flex flex-col lg:flex-row bg-blue-sign">
       <div>
-        <img src={image} alt="" className="bg-cover" />
+        <img src={image} alt="" className="object-cover h-full" />
       </div>
-      <div className="w-full lg:w-1/2 pt-14 lg:pt-28">
+      <div className="w-full pt-14 lg:pt-28">
         <h1 className="text-center text-3xl font-bold font-primary text-white">SIGN UP</h1>
         <h1 class="text-sm font-semibold mb-6 mt-3 text-white text-center">Join to Our Community with all time access and free</h1>
 
@@ -45,7 +45,7 @@ const SignIn = () => {
           <div className="pt-6">
             <button
               type="submit"
-              class="w-full bg-dark-blue text-white p-2 rounded-lg hover:bg-blue-900 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300"
+              class="w-full bg-yellowlight text-blue-sign font-bold p-2 rounded-lg focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300"
             >
               Sign Up
             </button>
@@ -54,7 +54,7 @@ const SignIn = () => {
         <div class="mt-4 mb-5 text-sm text-white font-semibold text-center">
           <p>
             Already have an account?{" "}
-            <a href="#" class="text-dark-blue font-bold hover:underline">
+            <a href="#" class="text-yellowlight font-bold hover:underline">
               Login here
             </a>
           </p>

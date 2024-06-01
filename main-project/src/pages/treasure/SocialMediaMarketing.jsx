@@ -1,7 +1,7 @@
 import React from "react";
 import book1 from "/adhdbook1.jpg";
 
-const LogoPage = () => {
+const SocialMediaMarketing = () => {
   return (
     <div>
       <h1 className="mx-5 font-bold font-primary text-dark-blue text-2xl">Beberapa saran untuk kamu:</h1>
@@ -30,4 +30,4 @@ const LogoPage = () => {
   );
 };
 
-export default LogoPage;
+export default SocialMediaMarketing;

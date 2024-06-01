@@ -37,6 +37,7 @@ module.exports = {
         "burnt-cheese": "#FF6B00",
         "light-cyan": "#CAF1FD",
         "lapis-lazuli": "#2E3B82",
+        "blue-sign": "#02C0FC",
         "celestial-blue": "#2B9BCB",
         "happy-yellow": "#EFC900",
         "neutral-blue": "#31AAF1",

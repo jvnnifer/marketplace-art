@@ -2,19 +2,19 @@ import React, { useEffect, useState } from "react";
 import logo from "/BLUEECHOARTS.svg";
 
 const Navbar = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.querySelector(".navbar");
-      const scrolled = window.scrollY;
-      const scrollThreshold = 30;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const navbar = document.querySelector(".navbar");
+  //     const scrolled = window.scrollY;
+  //     const scrollThreshold = 30;
 
-      scrolled > scrollThreshold ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled");
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //     scrolled > scrollThreshold ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled");
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <header className="relative z-[2]">
-      <div className="fixed navbar font-primary bg-lapis-lazuli lg:bg-transparent">
+      <div className="fixed navbar font-primary bg-lapis-lazuli">
         <div className="section-container">
           <div className="navbar-start">
             <details className="dropdown text-white lg:hidden pt-10" open={isChecked ? "open" : ""}>
