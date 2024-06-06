@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SocialMediaMarketing from "./SocialMediaMarketing";
 import DesignLogo from "./DesignLogo";
-import PsyRec from "./PsyRec";
+import VoiceOver from "./VoiceOver";
 
 const Reccomend = () => {
   const [activeTab, setActiveTab] = useState("SocialMediaMarketing");
@@ -28,16 +28,13 @@ const Reccomend = () => {
             >
               Design Logo
             </a>
-            <a
-              className={"flex items-center flex-shrink-0 px-5 py-2 border-b-4 cursor-pointer " + (activeTab === "Psikolog Anak" ? "border-lapis-lazuli font-semibold" : "border-blue-300 text-dark-blue")}
-              onClick={() => handleTab("Psikolog Anak")}
-            >
-              Psikolog Anak
+            <a className={"flex items-center flex-shrink-0 px-5 py-2 border-b-4 cursor-pointer " + (activeTab === "VoiceOver" ? "border-lapis-lazuli font-semibold" : "border-blue-300 text-dark-blue")} onClick={() => handleTab("VoiceOver")}>
+              Voice Over
             </a>
           </div>
           {activeTab === "SocialMediaMarketing" && <SocialMediaMarketing />}
           {activeTab === "DesignLogo" && <DesignLogo />}
-          {activeTab === "Psikolog Anak" && <PsyRec />}
+          {activeTab === "VoiceOver" && <VoiceOver />}
         </div>
       </div>
     </div>

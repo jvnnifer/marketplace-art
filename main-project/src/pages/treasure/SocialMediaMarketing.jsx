@@ -1,29 +1,28 @@
 import React from "react";
-import book1 from "/adhdbook1.jpg";
+import photo1 from "/socialmediamarketing.svg";
+import photo3 from "/socialmediamarketing2.svg";
+import photo2 from "/logo2.svg";
+import photo4 from "/logo1.svg";
 
 const SocialMediaMarketing = () => {
   return (
     <div>
-      <h1 className="mx-5 font-bold font-primary text-dark-blue text-2xl">Beberapa saran untuk kamu:</h1>
-      <div className="flex flex-col lg:flex-row gap-4">
-        <div className="w-[350px] h-[450px] bg-transparent cursor-pointer group  rounded-3xl perspective-1000 m-5">
-          <div className="relative w-full h-full preserve-3d group-hover:rotate-y-180 duration-500">
-            <div className="w-full h-full absolute rounded-3xl overflow-hidden">
-              <img src={book1} className="w-full h-full" />
-            </div>
-            <div className="absolute rotate-y-180 w-full h-full bg-blue-700 bg-opacity-95 rounded-3xl overflow-hidden p-10 text-neutral-300 space-y-5 backface-hidden">
-              <div>
-                <span className="font-bold text-2xl">A BEGINNER'S GUIDE ON PARENTING CHILDREN WITH ADHD</span>
-              </div>
-              <div className="flex flex-col space-y-5">
-                <span className="font-bold">BLURB</span>
-                <span className="text-md">
-                  The day your child is diagnosed with ADHD is not doomsday, but rather the beginning of a new journey to self-discovery and successful living. As a parent, raising a child with ADHD is not a burden, and it shouldn’t feel
-                  like one.
-                </span>
-              </div>
-            </div>
+      <div class="flex flex-col lg:flex-row m-5">
+        <div className="flex flex-col w-64 mx-20">
+          <img src={photo1} className="w-64" />
+          <div className="flex flex-row items-center pt-3">
+            <img src={photo2} />
+            <h1 className="font-semibold pl-2">Van Houtten</h1>
           </div>
+          <p className="font-semibold">I will do a modern minimalist logo design for your business</p>
+        </div>
+        <div className="flex flex-col w-64 mx-20">
+          <img src={photo3} className="w-64" />
+          <div className="flex flex-row items-center pt-3">
+            <img src={photo4} />
+            <h1 className="font-semibold pl-2">Mangrove</h1>
+          </div>
+          <p className="font-semibold">I will design, edit, redo, resize your logo</p>
         </div>
       </div>
     </div>
