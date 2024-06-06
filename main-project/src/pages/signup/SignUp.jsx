@@ -38,8 +38,8 @@ const SignIn = () => {
               <option value="" disabled selected>
                 Select your role
               </option>
-              <option value="child">Child</option>
-              <option value="parent">Parent</option>
+              <option value="artist">Artist</option>
+              <option value="client">Client</option>
             </select>
           </div>
           <div className="pt-6">
