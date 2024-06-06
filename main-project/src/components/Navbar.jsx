@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "/BLUEECHOARTS.svg";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   // useEffect(() => {
@@ -15,11 +16,16 @@ const Navbar = () => {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
   // }, []);
+
+  // buat ngatur checkbox pas dropdown saat tampilannya jadi responsive
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
     setIsChecked((prevState) => !prevState);
   };
+
+  const location = useLocation();
+  const username = location.state?.username || "Guest";
 
   const navItems = (
     <>
@@ -54,7 +60,7 @@ const Navbar = () => {
               </summary>
               <ul className="menu menu-xl dropdown-content mt-5 p-2 shadow rounded-box w-screen bg-lapis-lazuli h-screen">{navItems}</ul>
             </details>
-            <div className="text-white font-semibold text-lg invisible lg:visible">Hello, New!</div>
+            <div className="text-white font-semibold text-lg invisible lg:visible">Hello, {username}</div>
           </div>
           <div className="navbar-center">
             <img src={logo} className="w-20" alt="" />
