@@ -18,7 +18,7 @@ const router = Router([
         element: <SignIn />,
       },
       {
-        path: "/treasure",
+        path: "/illustration",
         element: <TreasureParent />,
       },
     ],
