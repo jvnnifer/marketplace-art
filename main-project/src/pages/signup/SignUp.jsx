@@ -4,7 +4,7 @@ import Validation from "./SignUpValidation.js";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const SignIn = () => {
+const SignUp = () => {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -26,7 +26,7 @@ const SignIn = () => {
       try {
         const res = await axios.post("http://localhost:8081/signup", values);
         console.log(res);
-        navigate("/home", { state: { username: values.username } });
+        navigate("/login");
       } catch (err) {
         console.log(err);
       }
@@ -115,4 +115,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

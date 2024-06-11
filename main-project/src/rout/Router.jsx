@@ -1,8 +1,9 @@
 import { createBrowserRouter as Router } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/home/Home.jsx";
-import SignIn from "../pages/signup/SignUp.jsx";
+import SignUp from "../pages/signup/SignUp.jsx";
 import TreasureParent from "../pages/treasure/TreasureParent.jsx";
+import LogIn from "../pages/login/LogIn.jsx";
 
 const router = Router([
   {
@@ -15,11 +16,15 @@ const router = Router([
       },
       {
         path: "/signup",
-        element: <SignIn />,
+        element: <SignUp />,
       },
       {
         path: "/illustration",
         element: <TreasureParent />,
+      },
+      {
+        path: "/login",
+        element: <LogIn />,
       },
     ],
   },
