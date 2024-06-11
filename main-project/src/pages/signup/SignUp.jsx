@@ -26,7 +26,7 @@ const SignIn = () => {
       try {
         const res = await axios.post("http://localhost:8081/signup", values);
         console.log(res);
-        navigate("/illustration", { state: { username: values.username } });
+        navigate("/home", { state: { username: values.username } });
       } catch (err) {
         console.log(err);
       }
