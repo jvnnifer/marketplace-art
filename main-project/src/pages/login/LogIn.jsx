@@ -27,7 +27,7 @@ const LogIn = () => {
         if (res.data === "Success") {
           navigate("/illustration");
         } else {
-          alert("No account existed");
+          alert("Username or password might be wrong");
         }
       } catch (err) {
         console.log("Error:", err);
