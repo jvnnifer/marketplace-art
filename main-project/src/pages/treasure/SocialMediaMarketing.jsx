@@ -23,7 +23,7 @@ const SocialMediaMarketing = () => {
           <div className="flex flex-row items-center pt-3">
             <img src={photo4} />
             <a href="/order-page" className="font-semibold pl-2">
-              Mangrove
+              LoremIpsum123
             </a>
           </div>
           <p className="font-semibold">I will design, edit, redo, resize your logo</p>

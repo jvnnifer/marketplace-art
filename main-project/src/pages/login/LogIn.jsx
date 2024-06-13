@@ -10,7 +10,10 @@ const LogIn = () => {
     password: "",
   });
   const navigate = useNavigate();
-  const [error, setError] = useState({});
+  const [error, setError] = useState({
+    username: "",
+    password: "",
+  });
 
   const handleInput = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
@@ -27,11 +30,14 @@ const LogIn = () => {
         if (res.data === "Success") {
           navigate("/illustration");
         } else {
-          alert("Username or password might be wrong");
+          alert("Failed");
         }
       } catch (err) {
-        console.log("Error:", err);
+        console.error("Error:", err);
+        alert("Username or password might be wrong");
       }
+    } else {
+      alert("Failed");
     }
   };
 
@@ -54,6 +60,7 @@ const LogIn = () => {
               id="username"
               name="username"
               onChange={handleInput}
+              value={values.username}
               class="mt-1 p-2 w-full border rounded-lg focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
             />
             {error.username && <span className="text-red-500 font-bold">{error.username}</span>}
@@ -67,6 +74,7 @@ const LogIn = () => {
               type="password"
               id="password"
               name="password"
+              value={values.password}
               onChange={handleInput}
               class="mt-1 p-2 w-full border rounded-lg focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
             />

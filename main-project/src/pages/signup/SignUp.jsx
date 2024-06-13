@@ -105,7 +105,7 @@ const SignUp = () => {
         <div class="mt-4 mb-5 text-sm text-white font-semibold text-center">
           <p>
             Already have an account?{" "}
-            <a href="#" class="text-yellowlight font-bold hover:underline">
+            <a href="/login" class="text-yellowlight font-bold hover:underline">
               Login here
             </a>
           </p>

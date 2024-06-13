@@ -33,7 +33,7 @@ const Navbar = () => {
         <a href="/illustration">Illustration</a>
       </li>
       <li className="text-white text-lg lg:mr-5 lg:bg-burnt-cheese text-white hover:bg-happy-yellow rounded-lg hover:duration-300">
-        <a href="/signup">Sign in</a>
+        <a href="/signup">Sign Up</a>
       </li>
     </>
   );

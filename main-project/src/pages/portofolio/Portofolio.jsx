@@ -9,7 +9,7 @@ const Portofolio = () => {
         <h1 className="font-bold text-2xl">I will be your social media marketing manager</h1>
         <div className="flex flex-row items-center pt-3">
           <img src={photo1} alt="" />
-          <h1 className="font-semibold pl-2">Lorem Ipsum</h1>
+          <h1 className="font-semibold pl-2">LoremIpsum123</h1>
         </div>
         <h1 className="text-[#032A8E] font-semibold border-b-2 mx-40 text-center border-[#228FF6]">Portofolios</h1>
         <img src={photo2} className="w-72 mt-5 mb-20 mx-auto" alt="" />
