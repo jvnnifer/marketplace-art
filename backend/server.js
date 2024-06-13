@@ -33,6 +33,24 @@ app.post("/signup", (req, res) => {
   });
 });
 
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  const sql = "SELECT * FROM klien WHERE username = ? AND password = ?";
+  db.query(sql, [username, password], (err, result) => {
+    if (err) {
+      console.error("Error executing query:", err);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    if (result.length > 0) {
+      // User ditemukan, login berhasil
+      return res.json("Success");
+    } else {
+      // Tidak ditemukan user dengan username dan password yang sesuai
+      return res.status(401).json("Failed");
+    }
+  });
+});
+
 app.listen(8081, () => {
   console.log("listening");
 });
