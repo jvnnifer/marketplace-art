@@ -12,7 +12,9 @@ const SocialMediaMarketing = () => {
           <img src={photo1} className="w-64" />
           <div className="flex flex-row items-center pt-3">
             <img src={photo2} />
-            <h1 className="font-semibold pl-2">Van Houtten</h1>
+            <a href="#" className="font-semibold pl-2">
+              Van Houtten
+            </a>
           </div>
           <p className="font-semibold">I will do a modern minimalist logo design for your business</p>
         </div>
@@ -20,7 +22,9 @@ const SocialMediaMarketing = () => {
           <img src={photo3} className="w-64" />
           <div className="flex flex-row items-center pt-3">
             <img src={photo4} />
-            <h1 className="font-semibold pl-2">Mangrove</h1>
+            <a href="/order-page" className="font-semibold pl-2">
+              Mangrove
+            </a>
           </div>
           <p className="font-semibold">I will design, edit, redo, resize your logo</p>
         </div>
