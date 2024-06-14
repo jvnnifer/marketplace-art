@@ -34,14 +34,6 @@ const DesignLogo = ({ category }) => {
           <p className="font-semibold">{portfolio.NamaJenisJasa}</p>
         </div>
       ))}
-      <div className="flex flex-col w-64 mx-20">
-        <img src={photo3} className="w-64" />
-        <div className="flex flex-row items-center pt-3">
-          <img src={photo4} />
-          <h1 className="font-semibold pl-2">Mangrove</h1>
-        </div>
-        <p className="font-semibold">I will design, edit, redo, resize your logo</p>
-      </div>
     </div>
   );
 };
