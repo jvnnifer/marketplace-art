@@ -51,6 +51,35 @@ app.post("/login", (req, res) => {
   });
 });
 
+// Endpoint to get all jasa keahlian
+app.get("/illustration/:category", (req, res) => {
+  const category = req.params.category;
+  const sql = `SELECT jk.NamaJenisJasa, jk.Harga, jk.revision, jk.delivery, sn.username
+  FROM jasakeahlian jk JOIN seniman sn ON jk.NoSeniman = sn.NoSeniman
+  JOIN jenislayananjasaseni jl ON jk.NoJenisJasa = jl.NoJenisJasa
+  WHERE jl.NamaJenisJasa = ?`;
+  db.query(sql, [category], (err, result) => {
+    if (err) {
+      console.error("Error executing query: ", err);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    return res.status(200).json(result);
+  });
+});
+
+// Endpoint to get a specific jasa keahlian by NoJasa
+app.get("/portofolio/:NoJasa", (req, res) => {
+  const { NoJasa } = req.params;
+  const sql = "SELECT * FROM jasakeahlian WHERE NoJasa = ?";
+  db.query(sql, [NoJasa], (err, result) => {
+    if (err) {
+      console.error("Error executing query: ", err);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    return res.status(200).json(result);
+  });
+});
+
 app.listen(8081, () => {
   console.log("listening");
 });
