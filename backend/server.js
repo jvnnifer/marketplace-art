@@ -54,8 +54,9 @@ app.post("/login", (req, res) => {
 // Endpoint to get all jasa keahlian
 app.get("/illustration/:category", (req, res) => {
   const category = req.params.category;
-  const sql = `SELECT jk.NamaJenisJasa, jk.Harga, jk.revision, jk.delivery, sn.username
+  const sql = `SELECT jk.NoJasa, jk.NamaJenisJasa, sn.username, p.Nama
   FROM jasakeahlian jk JOIN seniman sn ON jk.NoSeniman = sn.NoSeniman
+  JOIN portofolio p ON p.NoJasa = jk.NoJasa
   JOIN jenislayananjasaseni jl ON jk.NoJenisJasa = jl.NoJenisJasa
   WHERE jl.NamaJenisJasa = ?`;
   db.query(sql, [category], (err, result) => {
@@ -68,9 +69,13 @@ app.get("/illustration/:category", (req, res) => {
 });
 
 // Endpoint to get a specific jasa keahlian by NoJasa
-app.get("/portofolio/:NoJasa", (req, res) => {
+app.get("/order-page/:NoJasa", (req, res) => {
   const { NoJasa } = req.params;
-  const sql = "SELECT * FROM jasakeahlian WHERE NoJasa = ?";
+  const sql = `SELECT jk.NoJasa, jk.Keterangan, jk.NamaJenisJasa, jk.Harga, jk.Revisi AS revision, jk.Pengiriman AS delivery, sn.username, p.Nama, p.Keterangan AS KeteranganPortofolio
+  FROM jasakeahlian jk 
+  JOIN seniman sn ON jk.NoSeniman = sn.NoSeniman
+  JOIN portofolio p ON p.NoJasa = jk.NoJasa
+  WHERE jk.NoJasa = ?`;
   db.query(sql, [NoJasa], (err, result) => {
     if (err) {
       console.error("Error executing query: ", err);

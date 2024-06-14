@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import photo1 from "/logo0.jpg";
+import { Link } from "react-router-dom";
 import photo2 from "/logo1.svg";
 import photo3 from "/logo3.svg";
 import photo4 from "/logo2.svg";
@@ -26,10 +26,12 @@ const DesignLogo = ({ category }) => {
     <div class="flex flex-col lg:flex-row m-5">
       {portfolios.map((portfolio) => (
         <div key={portfolio.NoJasa} className="flex flex-col w-64 mx-20">
-          <img src={photo1} className="w-64" />
+          <img src={`/${portfolio.Nama}`} className="w-64" />
           <div className="flex flex-row items-center pt-3">
             <img src={photo2} />
-            <h1 className="font-semibold pl-2">{portfolio.username}</h1>
+            <Link to={`/order-page/${portfolio.NoJasa}`} className="font-semibold pl-2">
+              {portfolio.username}
+            </Link>
           </div>
           <p className="font-semibold">{portfolio.NamaJenisJasa}</p>
         </div>

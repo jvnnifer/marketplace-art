@@ -28,7 +28,7 @@ const router = Router([
         element: <LogIn />,
       },
       {
-        path: "/order-page",
+        path: "/order-page/:NoJasa",
         element: <Portofolio />,
       },
     ],
