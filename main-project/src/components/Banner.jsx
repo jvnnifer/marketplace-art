@@ -10,7 +10,7 @@ const Banner = () => {
   return (
     <div className="h-[75vh] font-heading bg-left-1 lg:bg-[0px]" style={backgroundStyle}>
       <div className="section-container relative">
-        <div className="flex flex-col justify-center items-center absolute inset-x-0 top-32">
+        <div className="flex flex-col justify-center items-center absolute inset-x-0 top-32 mt-7">
           <div class="flex justify-center items-center">
             <h1 class="text-mint text-8xl">Blue</h1>
             <h1 class="text-white text-8xl mx-2">Echo</h1>

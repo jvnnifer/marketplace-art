@@ -5,6 +5,7 @@ import SignUp from "../pages/signup/SignUp.jsx";
 import TreasureParent from "../pages/treasure/TreasureParent.jsx";
 import LogIn from "../pages/login/LogIn.jsx";
 import Portofolio from "../pages/portofolio/Portofolio.jsx";
+import OrderDetail from "../pages/OrderDetail/OrderDetail.jsx";
 
 const router = Router([
   {
@@ -30,6 +31,10 @@ const router = Router([
       {
         path: "/order-page/:NoJasa",
         element: <Portofolio />,
+      },
+      {
+        path: "/order-detail",
+        element: <OrderDetail />,
       },
     ],
   },
