@@ -1,8 +1,8 @@
 import React from "react";
-import image from "/kingdom-removebg.svg";
-import image2 from "/3kids-removebg.svg";
-import image3 from "/bicycle-removebg.svg";
-import image4 from "/kid-with-cat-removebg.svg";
+import image from "/female.svg";
+import image2 from "/female.svg";
+import image3 from "/female.svg";
+import image4 from "/female.svg";
 
 const Stack = () => {
   return (

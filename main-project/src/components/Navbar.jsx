@@ -19,6 +19,31 @@ const Navbar = () => {
 
   // buat ngatur checkbox pas dropdown saat tampilannya jadi responsive
   const [isChecked, setIsChecked] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const loggedInStatus = window.localStorage.getItem("isLoggedIn");
+
+      // Jika sudah login, ambil data pengguna dari localStorage
+      if (loggedInStatus === "true") {
+        const userData = JSON.parse(localStorage.getItem("user"));
+        setUser(userData);
+        setIsLoggedIn(true);
+      } else {
+        setUser(null);
+        setIsLoggedIn(false);
+      }
+    };
+
+    handleStorageChange();
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   const handleCheckboxChange = () => {
     setIsChecked((prevState) => !prevState);
@@ -32,9 +57,15 @@ const Navbar = () => {
       <li className="lg:bg-transparent text-yellowlight text-lg lg:mr-5 border-1 border-transparent lg:border-2 lg:border-yellowlight rounded-lg hover:bg-yellowlight hover:text-burnt-cheese hover:duration-300">
         <a href="/illustration">Illustration</a>
       </li>
-      <li className="text-white text-lg lg:mr-5 lg:bg-burnt-cheese text-white hover:bg-happy-yellow rounded-lg hover:duration-300">
-        <a href="/signup">Sign Up</a>
-      </li>
+      {!isLoggedIn ? (
+        <li className="text-white text-lg lg:mr-5 lg:bg-burnt-cheese text-white hover:bg-happy-yellow rounded-lg hover:duration-300">
+          <a href="/signup">Sign Up</a>
+        </li>
+      ) : (
+        <li className="text-white text-lg lg:mr-5 lg:bg-[#37BCCE] text-white rounded-lg hover:duration-300">
+          <a href="/profile">Profile</a>
+        </li>
+      )}
     </>
   );
 
@@ -57,7 +88,7 @@ const Navbar = () => {
               </summary>
               <ul className="menu menu-xl dropdown-content mt-5 p-2 shadow rounded-box w-screen bg-lapis-lazuli h-screen">{navItems}</ul>
             </details>
-            <div className="text-white font-semibold text-lg invisible lg:visible">Hello, Guest!</div>
+            <div className="text-white font-semibold text-lg invisible lg:visible">{isLoggedIn ? `Hello, ${user.username}` : "Hello, Guest!"}</div>
           </div>
           <div className="navbar-center">
             <img src={logo} className="w-20" alt="" />

@@ -1,5 +1,5 @@
 import React from "react";
-import image from "/kid-play-kit3.svg";
+import image from "/female.svg";
 
 const Info = () => {
   const backgroundInfo = {

@@ -28,6 +28,8 @@ const LogIn = () => {
       try {
         const res = await axios.post("http://localhost:8081/login", values);
         if (res.data === "Success") {
+          window.localStorage.setItem("isLoggedIn", true);
+          window.localStorage.setItem("user", JSON.stringify({ username: values.username }));
           navigate("/illustration");
         } else {
           alert("Failed");

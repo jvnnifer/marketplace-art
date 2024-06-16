@@ -6,6 +6,7 @@ import TreasureParent from "../pages/treasure/TreasureParent.jsx";
 import LogIn from "../pages/login/LogIn.jsx";
 import Portofolio from "../pages/portofolio/Portofolio.jsx";
 import OrderDetail from "../pages/OrderDetail/OrderDetail.jsx";
+import Profile from "../pages/profile/Profile.jsx";
 
 const router = Router([
   {
@@ -35,6 +36,10 @@ const router = Router([
       {
         path: "/order-detail",
         element: <OrderDetail />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
     ],
   },

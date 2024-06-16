@@ -1,5 +1,4 @@
 import React from "react";
-import image from "/4kids-removebg.svg";
 
 const Promote = () => {
   return (
