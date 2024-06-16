@@ -45,7 +45,7 @@ const Portofolio = () => {
         Keterangan: portfolio.Keterangan,
       });
       console.log("Order response:", orderResponse.data);
-      navigate("/order-detail");
+      navigate(`/order-detail/${orderResponse.data.NoPesanan}`);
     } catch (error) {
       console.error("Error placing order:", error);
     }

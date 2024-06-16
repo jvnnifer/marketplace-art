@@ -34,7 +34,7 @@ const router = Router([
         element: <Portofolio />,
       },
       {
-        path: "/order-detail",
+        path: "/order-detail/:NoPesanan",
         element: <OrderDetail />,
       },
       {

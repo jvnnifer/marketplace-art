@@ -102,7 +102,6 @@ app.get("/client/:username", (req, res) => {
 
 app.post("/order", (req, res) => {
   const { NoJasa, NoKlien, TanggalPesan, Keterangan } = req.body;
-
   const sql = "INSERT INTO pesanan (`NoJasa`, `NoKlien`, `TanggalPesan`, `Keterangan`) VALUES (?)";
   const values = [NoJasa, NoKlien, TanggalPesan, Keterangan];
 
@@ -110,6 +109,28 @@ app.post("/order", (req, res) => {
     if (err) {
       console.error("Error inserting order:", err);
       return res.status(500).json({ error: "Error" });
+    }
+    const NoPesanan = result.insertId;
+
+    return res.status(200).json({ NoPesanan });
+  });
+});
+
+app.get("/order-detail/:NoPesanan", (req, res) => {
+  const { NoPesanan } = req.params;
+
+  const sql = `SELECT k.username AS usernameKlien, k.email, pe.Keterangan, jk.Harga, 
+  jk.Revisi, jk.Pengiriman, s.username AS usernameSeniman, po.Nama
+  FROM Klien k JOIN Pesanan pe ON k.NoKlien = pe.NoKlien 
+  JOIN JasaKeahlian jk ON pe.NoJasa = jk.NoJasa
+  JOIN Portofolio po ON po.NoJasa = jk.NoJasa
+  JOIN Seniman s ON s.NoSeniman = jk.NoSeniman
+  WHERE pe.NoPesanan = ?`;
+
+  db.query(sql, [NoPesanan], (err, result) => {
+    if (err) {
+      console.error("Error executing query: ", err);
+      return res.status(500).json({ error: "Internal Server Error" });
     }
     return res.status(200).json(result);
   });
