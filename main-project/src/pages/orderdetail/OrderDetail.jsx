@@ -5,7 +5,6 @@ import money1 from "/logomoney1.png";
 import money2 from "/logomoney2.png";
 import money3 from "/logomoney3.png";
 import social from "/socialmediamarketing2.png";
-import axios from "axios";
 
 const OrderDetail = () => {
   return (

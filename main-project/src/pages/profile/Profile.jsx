@@ -23,8 +23,8 @@ const Profile = () => {
       <div className="bg-[#B2DAFF] pt-20 items-center justify-center flex flex-col pb-10">
         <h1 className="text-white text-center font-bold text-xl">ACCOUNT</h1>
         <div className="w-[100vh] bg-white rounded-lg px-10 py-8 mt-5">
-          <div className="flex flex-row justify-end border-2-[#37F3DC] rounded-lg">
-            <div className="text-[#37F3DC] font-semibold">Online</div>
+          <div className="flex flex-row justify-end">
+            <div className="text-[#37F3DC] font-semibold border-solid border-2 border-[#37F3DC] rounded-full px-2 py-1">Online</div>
           </div>
           <div className="justify-center items-center flex flex-col">
             <img src={profile} className="mx-auto rounded-full w-24" alt="" />

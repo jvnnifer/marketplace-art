@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import photo1 from "/logo1.svg";
 import facebook from "/Facebook.png";
@@ -9,6 +9,7 @@ import twitter from "/TwitterX.png";
 const Portofolio = () => {
   const { NoJasa } = useParams();
   const [portfolio, setPortfolio] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPortfolio = async () => {
@@ -25,6 +26,30 @@ const Portofolio = () => {
     };
     fetchPortfolio();
   }, [NoJasa]);
+
+  const handleBuyClick = async () => {
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      const response = await axios.get(`http://localhost:8081/client/${user.username}`);
+
+      if (response.data.error) {
+        console.error("Error fetching NoKlien:", response.data.error);
+        return;
+      }
+
+      const NoKlien = response.data.NoKlien;
+      const orderResponse = await axios.post(`http://localhost:8081/order`, {
+        NoJasa,
+        NoKlien,
+        TanggalPesan: new Date(),
+        Keterangan: portfolio.Keterangan,
+      });
+      console.log("Order response:", orderResponse.data);
+      navigate("/order-detail");
+    } catch (error) {
+      console.error("Error placing order:", error);
+    }
+  };
 
   return (
     <div className="flex items-center justify-center">
@@ -60,9 +85,9 @@ const Portofolio = () => {
               <h2 className="pb-2">{portfolio.revision}</h2>
               <h1 className="font-semibold text-[#032A8E]">Delivery</h1>
               <h2 className="pb-2">{portfolio.delivery}</h2>
-              <a href="/order-detail" className="rounded-lg text-white text-center bg-[#032A8E] my-3 py-2 font-bold">
+              <button onClick={handleBuyClick} className="rounded-lg text-white text-center bg-[#032A8E] my-3 py-2 font-bold">
                 Continue to buy
-              </a>
+              </button>
             </div>
             <div className="py-3"></div>
             <h1 className="border-b-2 border-[#032A8E] font-bold p-3 text-center">Our Contact</h1>

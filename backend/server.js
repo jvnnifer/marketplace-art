@@ -85,6 +85,36 @@ app.get("/order-page/:NoJasa", (req, res) => {
   });
 });
 
+app.get("/client/:username", (req, res) => {
+  const username = req.params.username;
+  const sql = `SELECT * FROM klien WHERE username = ?`;
+  db.query(sql, [username], (err, result) => {
+    if (err) {
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    if (result.length === 0) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    const client = result[0];
+    return res.status(200).json(client);
+  });
+});
+
+app.post("/order", (req, res) => {
+  const { NoJasa, NoKlien, TanggalPesan, Keterangan } = req.body;
+
+  const sql = "INSERT INTO pesanan (`NoJasa`, `NoKlien`, `TanggalPesan`, `Keterangan`) VALUES (?)";
+  const values = [NoJasa, NoKlien, TanggalPesan, Keterangan];
+
+  db.query(sql, [values], (err, result) => {
+    if (err) {
+      console.error("Error inserting order:", err);
+      return res.status(500).json({ error: "Error" });
+    }
+    return res.status(200).json(result);
+  });
+});
+
 app.listen(8081, () => {
   console.log("listening");
 });
