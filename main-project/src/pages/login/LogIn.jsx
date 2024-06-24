@@ -30,6 +30,7 @@ const LogIn = () => {
         if (res.data === "Success") {
           window.localStorage.setItem("isLoggedIn", true);
           window.localStorage.setItem("user", JSON.stringify({ username: values.username }));
+          window.dispatchEvent(new Event("storage"));
           navigate("/illustration");
         } else {
           alert("Failed");
