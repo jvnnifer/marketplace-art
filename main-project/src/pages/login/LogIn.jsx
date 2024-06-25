@@ -39,8 +39,6 @@ const LogIn = () => {
         console.error("Error:", err);
         alert("Username or password might be wrong");
       }
-    } else {
-      alert("Failed");
     }
   };
 

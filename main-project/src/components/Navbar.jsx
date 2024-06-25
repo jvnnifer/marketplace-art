@@ -49,12 +49,22 @@ const Navbar = () => {
     setIsChecked((prevState) => !prevState);
   };
 
+  const handleIllustrationClick = (e) => {
+    if (!isLoggedIn) {
+      e.preventDefault();
+      alert("Please log in first");
+    }
+  };
+
   const navItems = (
     <>
       <li className="lg:bg-transparent text-white text-lg mr-0 lg:mr-5">
         <a href="/">Home</a>
       </li>
-      <li className="lg:bg-transparent text-yellowlight text-lg lg:mr-5 border-1 border-transparent lg:border-2 lg:border-yellowlight rounded-lg hover:bg-yellowlight hover:text-burnt-cheese hover:duration-300">
+      <li
+        className="lg:bg-transparent text-yellowlight text-lg lg:mr-5 border-1 border-transparent lg:border-2 lg:border-yellowlight rounded-lg hover:bg-yellowlight hover:text-burnt-cheese hover:duration-300"
+        onClick={handleIllustrationClick}
+      >
         <a href="/illustration">Illustration</a>
       </li>
       {!isLoggedIn ? (
