@@ -6,7 +6,7 @@ const Logout = () => {
   const handleLogout = () => {
     window.localStorage.setItem("isLoggedIn", false);
     window.dispatchEvent(new Event("storage"));
-    navigate("/signup");
+    navigate("/");
   };
 
   return (
